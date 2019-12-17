@@ -1,0 +1,9 @@
+{
+  "plugins": ["prettier"],
+  "extends": ["prettier", "eslint:recommended"],
+  "rules": {
+    "prettier/prettier": "error"
+	},
+	"parser": "babel-eslint",
+	"env": { "node": true, "es6": true }
+}
