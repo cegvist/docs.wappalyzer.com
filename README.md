@@ -1,11 +1,8 @@
-# Wappalyzer 
-
---------------------------------------------------------------------------------
-Wappalyzer is a [cross-platform utility](https://www.wappalyzer.com/download)
-that uncovers the technologies used on websites. It detects
-[content management systems](https://www.wappalyzer.com/categories/cms),
-[ecommerce platforms](https://www.wappalyzer.com/categories/ecommerce),
-[web frameworks](https://www.wappalyzer.com/categories/javascript-frameworks),
-[server software](https://www.wappalyzer.com/categories/web-servers),
-[analytics tools](https://www.wappalyzer.com/categories/analytics)
-and [many more](https://www.wappalyzer.com/applications).
+---
+home: true
+heroImage: https://s3.dualstack.ap-southeast-2.amazonaws.com/assets.wappalyzer.com/images/logo-purple.svg
+heroText: null
+tagline: Developer documentation
+actionText: Get started →
+actionLink: /dev/contributing
+---

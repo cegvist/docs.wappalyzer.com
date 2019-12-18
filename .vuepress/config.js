@@ -1,4 +1,5 @@
 module.exports = {
+  title: 'Wappalyzer',
   themeConfig: {
     repo: 'aliasio/wappalyzer',
     docsRepo: 'aliasio/docs.wappalyzer.com',

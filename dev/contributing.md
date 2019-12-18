@@ -37,7 +37,7 @@ To add a new application, edit [`src/apps.json`](https://github.com/AliasIO/Wapp
 
 Only widely used applications should be added. When creating a pull request, please include ten or more links to websites that use the application, a GitHub page with at least 1,000 stars or anything that will help establish the size of the user base.
 
-Wappalyzer uses [regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) to fingerprint web applications. Refer to the [specification](/guide/specification) for more detail.
+Wappalyzer uses [regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) to fingerprint web applications. Refer to the [specification](/dev/specification) for more detail.
 
 ## Adding a new category
 
