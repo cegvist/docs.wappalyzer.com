@@ -1,0 +1,25 @@
+fontFace(family, src, weight = normal, style = normal)
+	@font-face
+		src: url(src + '.eot?#iefix') format('embedded-opentype'), url(src + '.woff') format('woff'), url(src + '.ttf') format('truetype'), url(src + '.svg#' + family) format('svg')
+		font-style: style
+		font-weight: weight
+
+avertaFont(src, weight = normal, style = normal)
+	fontFace('Averta', 'https://www.wappalyzer.com/fonts/averta/averta-' + src + '-webfont', weight, style)
+
+avertaFont('thinitalic', 100, italic)
+avertaFont('thin', 100, normal)
+avertaFont('extrathinitalic', 200, italic)
+avertaFont('extrathin', 200, normal)
+avertaFont('lightitalic', 300, italic)
+avertaFont('light', 300, normal)
+avertaFont('regular-italic', 400, italic)
+avertaFont('regular', 400, normal)
+avertaFont('semibolditalic', 600, italic)
+avertaFont('semibold', 600, normal)
+avertaFont('bolditalic', 700, italic)
+avertaFont('bold', 700, normal)
+avertaFont('extrabolditalic', 800, italic)
+avertaFont('extrabold', 800, normal)
+avertaFont('blackitalic', 900, italic)
+avertaFont('black', 900, normal)
