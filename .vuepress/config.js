@@ -1,5 +1,9 @@
 module.exports = {
   themeConfig: {
+    repo: 'aliasio/wappalyzer',
+    docsRepo: 'aliasio/docs.wappalyzer.com',
+    editLinks: true,
+    editLinkText: 'Edit this page on GitHub',
     logo: 'https://s3.dualstack.ap-southeast-2.amazonaws.com/assets.wappalyzer.com/images/logo-purple.svg',
     nav: [
       { text: 'Home', link: '/' },
