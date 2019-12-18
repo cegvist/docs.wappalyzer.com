@@ -5,7 +5,7 @@ Fetch and analyze multiple web pages on a domain by recursively following links.
 
 ## Endpoint
 
-`GET` `crawl/v1/`
+`GET` `https://api.wappalyzer.com/crawl/v1/`
 
 
 ## Properties

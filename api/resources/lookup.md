@@ -4,7 +4,7 @@ Look up a domain in the Wappalyzer database.
 
 ## Endpoint
 
-`GET` `lookup/v1/`
+`GET` `https://api.wappalyzer.com/lookup/v1/`
 
 
 ## Properties

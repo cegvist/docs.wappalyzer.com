@@ -5,7 +5,7 @@ Fetch and analyze a single web page.
 
 ## Endpoint
 
-`GET` `analyze/v1/`
+`GET` `https://api.wappalyzer.com/analyze/v1/`
 
 
 ## Properties

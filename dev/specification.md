@@ -41,11 +41,11 @@ Find the JSON schema at schema.json.
 
 ### Properties (required)
 
-| Field     | Type     | Description                                                                                                | Example                 |
-|:--------- |:-------- |:---------------------------------------------------------------------------------------------------------- |:----------------------- |
-| `cats`    | `Array`  | One or more category IDs. Refer to the [list of category IDs](https://www.wappalyzer.com/docs/categories). | `[1, 6]`                |
-| `icon`    | `String` | Application icon filename.                                                                                 | `"WordPress.svg"`       |
-| `website` | `String` | URL of the application's website.                                                                          | `"https://example.com"` |
+| Field     | Type   | Description                                                                                                | Example                 |
+|:--------- |:------ |:---------------------------------------------------------------------------------------------------------- |:----------------------- |
+| `cats`    | Array  | One or more category IDs. Refer to the [list of category IDs](https://www.wappalyzer.com/docs/categories). | `[1, 6]`                |
+| `icon`    | String | Application icon filename.                                                                                 | `"WordPress.svg"`       |
+| `website` | String | URL of the application's website.                                                                          | `"https://example.com"` |
 
 
 ### Implies and excludes (optional)
@@ -57,15 +57,15 @@ excludes   String | Array   Opposite of implies. The presence of one application
 
 ### Patterns (optional)
 
-| Field     | Type             | Description                                                                                  | Example                             |
-|:--------- |:---------------- |:-------------------------------------------------------------------------------------------- | ----------------------------------- |
-| `cookies` | `Object`         | Cookies.                                                                                     | `{ "cookie_name": "Cookie value" }` |
-| `js`      | `Object`         | JavaScript methods (case sensitive). Avoid short patterns to prevent matching minified code. | `{ "jQuery.fn.jquery": "" }`        |
-| `headers` | `Object`         | HTTP response headers.                                                                       | `{ "X-Powered-By": "^WordPress$" }` |
-| `html`    | `String | Array` | HTML source code.  Patterns must include an HTML opening tag to avoid matching plain text.   | `"<a [^>]*href=\"index.html"`       |
-| `url`     | `String`         | Full URL of the page.                                                                        | `"^https?//.+\\.wordpress\\.com"`   |
-| `meta`    | `Object`         | HTML meta tags, e.g. generator.                                                              | `{ "generator": "^WordPress$" }`    |
-| `script`  | `String | Array` | URLs of JavaScript files included on the page.                                               | `"jquery\\.js"`                     |
+| Field     | Type            | Description                                                                                  | Example                             |
+|:--------- |:--------------- |:-------------------------------------------------------------------------------------------- | ----------------------------------- |
+| `cookies` | Object          | Cookies.                                                                                     | `{ "cookie_name": "Cookie value" }` |
+| `js`      | Object          | JavaScript methods (case sensitive). Avoid short patterns to prevent matching minified code. | `{ "jQuery.fn.jquery": "" }`        |
+| `headers` | Object          | HTTP response headers.                                                                       | `{ "X-Powered-By": "^WordPress$" }` |
+| `html`    | String \| Array | HTML source code.  Patterns must include an HTML opening tag to avoid matching plain text.   | `"<a [^>]*href=\"index.html"`       |
+| `url`     | String          | Full URL of the page.                                                                        | `"^https?//.+\\.wordpress\\.com"`   |
+| `meta`    | Object          | HTML meta tags, e.g. generator.                                                              | `{ "generator": "^WordPress$" }`    |
+| `script`  | String \| Array | URLs of JavaScript files included on the page.                                               | `"jquery\\.js"`                     |
 
 
 ### Patterns

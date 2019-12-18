@@ -7,7 +7,7 @@ Transactional emails including order confirmations, receipts and invoices, will 
 
 ## Endpoint: request quote
 
-`POST` `dataset/v1/`
+`POST` `https://api.wappalyzer.com/dataset/v1/`
 
 
 ## Properties
@@ -84,7 +84,7 @@ https://api.wappalyzer.com/dataset/v1/
 
 ## Endpoint: confirm order
 
-`POST` `dataset/v1/{orderRef}`
+`POST` `https://api.wappalyzer.com/dataset/v1/{orderRef}`
 
 To confirm a purchase, use the order reference `orderRef` returned by the previous API call to make a second request. Within minutes, the completed order details will be sent to the callback URL, including a link to download the dataset.
 
