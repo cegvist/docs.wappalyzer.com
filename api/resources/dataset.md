@@ -2,7 +2,7 @@
 
 Purchasing a dataset requires two requests: one to obtain a quote and one to confirm the order. Both requests take a variable amount of time to complete and require a callback URL to handle the response.
 
-Transactional emails including order confirmations, receipts and invoices, will be send to the email address associated with the subscription.
+Transactional emails including order confirmations, receipts and invoices, will be send to the email address associated with the subscription in addition to the callbacks.
 
 
 ## Endpoint: request quote

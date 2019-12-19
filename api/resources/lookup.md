@@ -1,6 +1,9 @@
 # Lookup API
 
-Look up a domain in the Wappalyzer database.
+Look up a domain in the Wappalyzer database. Results are near-instant and site-wide and include historic data where available.
+
+If Wappalyzer hasn't seen the domain before, it will be indexed automatically. Results are sent to an optional callback URL once they become available.
+
 
 ## Endpoint
 
@@ -18,11 +21,11 @@ Look up a domain in the Wappalyzer database.
 
 ## Parameters
 
-| Name           | Required | Description                                                                                                    | Example               |
-|:-------------- |:-------- |:-------------------------------------------------------------------------------------------------------------- |:--------------------- |
-| `url`          | Yes      | URL of the web page to analyze                                                                                 | `https://example.com` |
-| `callback_url` | No       | A POST request will be made to the callback URL upon completion of the request, no more than two minutes later | `https://example.com` |
-| `denoise`      | No       | Filter out low confidence results (true (default) or false)                                                    | `false`               |
+| Name           | Required | Description                                                                                                        | Example               |
+|:-------------- |:-------- |:------------------------------------------------------------------------------------------------------------------ |:--------------------- |
+| `url`          | Yes      | URL of the website                                                                                                 | `https://example.com` |
+| `callback_url` | No       | If instant results are unavailable, A POST request will be made to the callback URL upon completion of the request | `https://example.com` |
+| `denoise`      | No       | Exclude low confidence results (`true` (default) or `false`)                                                       | `false`               |
 
 
 ## Examples
@@ -36,22 +39,20 @@ https://api.wappalyzer.com/lookup/v1/?url=https://example.com&callback_url=https
 ```
 **Example response (`200`)**
 
-Results are grouped by month and may contain data from anywhere between six months ago and today. If guaranteed up-to-date information is required, consider using the [Crawl API](/api/resources/crawl) instead.
+Results are grouped by month and may contain data from anywhere between six months ago and today.
 
 ``` json
 [
   {
     "monthYear": "01-2020",
-    "languages": [
-    ],
+    "languages": [],
     "applications": [
       {
         "name": "Craft CMS",
         "categories": [
           "CMS"
         ],
-        "versions": [
-        ],
+        "versions": [],
         "hits": 0
       }
     ]
@@ -59,13 +60,11 @@ Results are grouped by month and may contain data from anywhere between six mont
 ]
 ```
 
-The hits value is the number of times users of the browser extension have visited the website that month. It can be used as a rough indicator of traffic.
+The `hits` value is the number of times users of the [browser extension](https://www.wappalyzer.com/download) have visited the website that month. It can be used as an indicator of traffic.
 
 **Example response (`202`)**
 
-If no results are found and `callback_url` is specified, the domain will be fetched and analysed using the Crawl API as a fallback. The callback URL will be called within two minutes of completing the request.
-
-if no callback URL is specified, a `404` response code will be returned instead. This call will still be counted towards the subscription quota.
+If instant results are unavailable and `callback_url` is specified, a `202` is returned and the domain will be indexed using the [Crawl API](/api/resources/crawl) as a fallback. The callback URL will be called upon completion of the request, typically minutes later.
 
 ``` json
 {
@@ -73,7 +72,15 @@ if no callback URL is specified, a `404` response code will be returned instead.
 }
 ```
 
+If no callback URL is specified, a `404` response code will be returned instead. 
+
+::: tip NOTE
+A `404` response will still be counted towards the subscription quota. Provide a `callback_url` if possible.
+:::
+
 **Example callback response**
+
+The callback URL will receive a POST request when results become available.
 
 ``` json
 {

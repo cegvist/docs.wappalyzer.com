@@ -37,12 +37,14 @@ The APIs return [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_s
 | `403`     | Authorisation failure (incorrect API key or invalid method or resource) |
 | `429`     | Usage plan quota exceeded                                               |
 
-::: tip
+::: tip NOTE
 In less common scenarios, other status codes may be used. To verify if a request was successful, check for a `2xx` code. A `4xx` code indicates a problem with the request. A `5xx` code means a server-side error occurred. 
 :::
 
 
 ## Error types
+
+In case of an error, an error type may be included in the JSON response, along with a message detailing the error.
 
 | Type               | Description                                         |
 |:------------------ |:--------------------------------------------------- |
@@ -54,9 +56,12 @@ In less common scenarios, other status codes may be used. To verify if a request
 
 ## Usage
 
-To determine the remaining quota and limits associated with your plan, query the relevant resource URL with `/usage` appended. Note that this request will also be counted towards your subscription quota.
+To determine the remaining quota and limits associated with your plan, query the relevant resource URL with `/usage` appended. 
 
-The remaining quota value is updated periodically and should be treated as an estimate only.
+::: tip NOTE
+* This request will be counted towards your subscription quota
+* The remaining quota value is updated periodically and should be treated as an estimate
+:::
 
 **Example request**
 

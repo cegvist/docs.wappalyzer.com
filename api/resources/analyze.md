@@ -1,6 +1,6 @@
 # Analyze API
 
-Fetch and analyze a single web page.
+Fetch and analyse a single web page in real-time.
 
 
 ## Endpoint
@@ -21,7 +21,7 @@ Fetch and analyze a single web page.
 
 | Name           | Required | Description                    | Example               |
 |:-------------- |:-------- |:------------------------------ |:--------------------- |
-| `url`          | Yes      | URL of the web page to analyze | `https://example.com` |
+| `url`          | Yes      | URL of the web page to analyse | `https://example.com` |
 
 ## Examples
 
@@ -55,6 +55,12 @@ https://api.wappalyzer.com/analyze/v1/?url=https://example.com
 ```
 
 **Example response (error)**
+
+An [error type](/api/basics.html#error-types) and message is returned if the URL could not be fetched.
+
+::: tip NOTE
+Unsuccesful responses count towards the subscription quota.
+:::
 
 ``` json
 {

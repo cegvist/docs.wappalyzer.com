@@ -1,6 +1,8 @@
 # Crawl API
 
-Fetch and analyze multiple web pages on a domain by recursively following links. The crawler fetches up to 25 pages.
+Fetch and analyse a domain. The crawler fetches up to 25 pages in real-time and returns the combined results.
+
+This API is asynchronous: results are sent to a callback URL after the domain has been indexed.
 
 
 ## Endpoint
@@ -10,19 +12,19 @@ Fetch and analyze multiple web pages on a domain by recursively following links.
 
 ## Properties
 
-| Property        | Description                                                                                                                      |
+| Property        | Description                                                                                |
 |:----------------|:-------------------------------------------------------------------------------------------|
 | Execution       | Asynchronous                                                                               | 
-| Request timeout | 5s (callback response timeout: 5m)                                                         |  
+| Request timeout | 5s                                                                                         |  
 | Rate limit      | 1 request / second on the Small plan<br>10 requests / second on the Medium and Large plans |
 
 
 ## Parameters
 
-| Name           | Required | Description                                                                                                    | Example               |
-|:-------------- |:-------- |:-------------------------------------------------------------------------------------------------------------- |:--------------------- |
-| `url`          | Yes      | URL of the first web page to analyze                                                                           | `https://example.com` |
-| `callback_url` | Yes      | A POST request will be made to the callback URL upon completion of the request, no more than two minutes later | `https://example.com` |
+| Name           | Required | Description                                                                    | Example               |
+|:-------------- |:-------- |:------------------------------------------------------------------------------ |:--------------------- |
+| `url`          | Yes      | URL of the first web page to analyze                                           | `https://example.com` |
+| `callback_url` | Yes      | A POST request will be made to the callback URL upon completion of the request | `https://example.com` |
 
 
 ## Examples
@@ -43,6 +45,8 @@ https://api.wappalyzer.com/crawl/v1/?url=https://example.com&callback_url=https:
 ```
 
 **Example callback response (success)**
+
+The callback URL will receive a POST request when results become available.
 
 ``` json
 {
@@ -66,6 +70,8 @@ https://api.wappalyzer.com/crawl/v1/?url=https://example.com&callback_url=https:
 ```
 
 **Example callback response (error)**
+
+An [error type](/api/basics.html#error-types) and message is returned if no URLs could be fetched.
 
 ``` json
 {
